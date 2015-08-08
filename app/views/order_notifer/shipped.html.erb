@@ -1,0 +1,13 @@
+<h1>OrderNotifer#shipped</h1>
+
+<p>
+  <%= @greeting %>, find me in app/views/order_notifer/shipped.html.erb
+</p>
+
+<table>
+	<tr>
+		<th colspan="2">Qty</th>
+		<th>Description</th>
+	</tr>
+	<%= render @order.line_items %>
+</table>

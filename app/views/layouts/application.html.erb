@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Depot</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class='<%= controller.controller_name %>'>
+	
+
+<div class="navbar navbar-default">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="javascript:void(0)">Brand</a>
+  </div>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="javascript:void(0)">Active</a></li>
+      <li><a href="javascript:void(0)">Link</a></li>
+      <li class="dropdown">
+        <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)">Action</a></li>
+          <li><a href="javascript:void(0)">Another action</a></li>
+          <li><a href="javascript:void(0)">Something else here</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Dropdown header</li>
+          <li><a href="javascript:void(0)">Separated link</a></li>
+          <li><a href="javascript:void(0)">One more separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+    <form class="navbar-form navbar-left">
+      <input type="text" class="form-control col-lg-8" placeholder="Search">
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Login", login_path %></li>
+      <li class="dropdown">
+        <a href="http://fezvrasta.github.io/bootstrap-material-design/bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">ssss5656 <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="javascript:void(0)">Action</a></li>
+          <li><a href="javascript:void(0)">Another action</a></li>
+          <li><a href="javascript:void(0)">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="javascript:void(0)">Separated link</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-4" id="side">
+  <% if @cart %>
+    <%= hidden_div_if(@cart.line_items.empty?, id:'cart') do %>
+      <%= render(@cart) %>
+    <% end %>
+  <% end %>
+
+    <div id="sidelink">
+      <ul>
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#" id="testid">test test</a></li>
+      </ul>
+      <% if session[:user_id] %>
+      <ul>
+        <li><%= link_to 'Orders', orders_path %></li>
+        <li><%= link_to 'Products', products_path %></li>
+        <li><%= link_to 'Users', users_path %></li>
+      </ul>
+      <%= button_to 'Logout', logout_path, method: :delete %>
+      <% end %>
+    </div>
+
+    
+  </div>
+  <div class="col-md-8">
+     <%= yield %>
+  </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="/js/jquery-1.11.3.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

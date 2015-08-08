@@ -1,0 +1,47 @@
+#side {
+  float: left;
+  padding: 1em 2em;
+  background-color: #141; }
+  #side form, #side div {
+    display: inline; }
+  #side input {
+    font-size: small; }
+  #side #cart {
+    font-size: smaller;
+    color: white; }
+    #side #cart .button_to {
+      color: black; }
+  #side #sidelink ul {
+    padding: 2em; }
+    #side #sidelink ul li {
+      list-style: none; }
+      #side #sidelink ul li a {
+        color: #bfb;
+        font-size: larger; }
+      #side #sidelink ul li #testid {
+        color: white;
+        font-size: x-small; }
+
+.cart_title {
+  font-size: larger; }
+
+.depot_form fieldset {
+  background: #efe; }
+  .depot_form fieldset legend {
+    color: #dfd;
+    background: #141;
+    font-family: sans-serif;
+    padding: 0.2em 1em; }
+.depot_form form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block; }
+.depot_form form select, .depot_form form textarea, .depot_form form input {
+  margin-left: 0.5em; }
+.depot_form form .submit {
+  margin-left: 4em; }
+.depot_form form br {
+  display: none; }

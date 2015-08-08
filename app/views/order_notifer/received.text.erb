@@ -1,0 +1,10 @@
+OrderNotifer#received
+
+<%= @greeting %>, find me in app/views/order_notifer/received.text.erb
+
+
+Dear <%= order.name %>
+Thank you
+
+<%= render @order.line_items %>
+We'll send you a separate email when your order ships
